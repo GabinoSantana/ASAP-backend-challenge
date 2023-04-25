@@ -4,7 +4,8 @@
   "description": "This service is responsible for managing the files of the application.",
   "main": "index.js",
   "scripts": {
-    "dev": "standard --fix && nodemon index.js",
+    "dev": "nodemon index.js",
+    "fix-lint": "standard --fix",
     "start": "node index.js",
     "test": "./node_modules/.bin/mocha --reporter spec",
     "lint": "eslint",

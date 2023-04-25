@@ -6,6 +6,7 @@ const {
 
 const getData = async (req, res, next) => {
   try {
+    const fileName = req.query.fileName
     const response = []
 
     const { files } = await getFiles()
@@ -21,6 +22,10 @@ const getData = async (req, res, next) => {
           code: error.response.data.code
         })
       }
+    }
+    if (fileName) {
+      const file = response.filter((file) => file.file === fileName)
+      return res.status(200).json(file)
     }
     res.status(200).json(response)
   } catch (error) {

@@ -1,5 +1,6 @@
 const expect = require('chai').expect
 
+const { describe, it } = require('mocha')
 const { getLinesFile } = require('../services/files.service')
 
 describe('getLinesFile function', () => {
